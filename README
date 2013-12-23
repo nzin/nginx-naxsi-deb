@@ -1,3 +1,4 @@
+This is a nginx source with special naxsi-forked module (see https://github.com/nzin/naxsi)
+For nginx, documentation is available at http://nginx.org
 
-Documentation is available at http://nginx.org
-
+Nicolas zin (nicolas.zin@gmail.com)
