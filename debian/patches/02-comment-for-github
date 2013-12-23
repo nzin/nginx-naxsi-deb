@@ -1,0 +1,32 @@
+Description: Changed Readme to accomodate github
+ Add a bit more information about the meaning of this project to accomodate github
+ .
+ nginx (1.5.8-ubuntu1) precise; urgency=low
+ .
+   * update nginx to version 1.5.8
+Author: Nicolas Zin <nicolas.zin@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- nginx-1.5.8.orig/README
++++ nginx-1.5.8/README
+@@ -1,3 +1,6 @@
++This is a nginx source with special naxsi-forked module (see https://github.com/nzin/naxsi)
++For nginx, documentation is available at http://nginx.org
++To update naxsi source: git merge -s ours --no-commit naxsi/master
++git read-tree --prefix=debian/modules/naxsi/ -u naxsi/master
+ 
+-Documentation is available at http://nginx.org
+-
++Nicolas zin (nicolas.zin@gmail.com)
