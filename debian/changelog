@@ -1,3 +1,9 @@
+nginx (1.5.8-ubuntu1) precise; urgency=low
+
+  * update nginx to version 1.5.8 
+
+ -- Nicolas Zin <nicolas.zin@gmail.com>  Mon, 23 Dec 2013 22:09:18 +0000
+
 nginx (1.5.1-ubuntu5) precise; urgency=low
 
   * change naxsi to my new github https://github.com/nzin/naxsi, to have the naxsi_logs option
