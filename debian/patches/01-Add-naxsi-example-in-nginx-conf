@@ -1,0 +1,68 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ nginx (1.5.1-ubuntu5) precise; urgency=low
+ .
+   * change naxsi to my new github https://github.com/nzin/naxsi, to have the naxsi_logs option
+Author: Nicolas Zin <nicolas.zin@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- nginx-1.5.1.orig/conf/nginx.conf
++++ nginx-1.5.1/conf/nginx.conf
+@@ -31,6 +31,14 @@ http {
+     keepalive_timeout  65;
+ 
+     #gzip  on;
++    
++    ##
++    # nginx-naxsi config
++    ##
++    # Uncomment it if you use nginx-naxsi
++    ##
++
++    #include /etc/nginx/naxsi_core.rules;
+ 
+     server {
+         listen       80;
+@@ -43,7 +51,25 @@ http {
+         location / {
+             root   html;
+             index  index.html index.htm;
++            
++            ##
++            # Uncomment it if you use nginx-naxsi
++            ##
++            # include    /etc/nginx/mynaxsi.rules;
++            # naxsi_logs /var/log/nginx/naxsi.log;
+         }
++        
++        ##
++        # Uncomment it if you use nginx-naxsi
++        ##
++        #This location is where, in learning mode, to-be-forbidden requests will be "copied"
++        #In non-learning mode, it's where denied request will land, so feel free to do whatever you want, 
++        #return 418 I'm a teapot, forward to a custom webpage with 
++        #a captcha to help track false-positives (see contrib for that),
++        #whatever you want to do !
++        # location /RequestDenied {
++        #     return 500;
++        # }
+ 
+         #error_page  404              /404.html;
+ 

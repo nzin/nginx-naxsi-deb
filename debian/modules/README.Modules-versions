@@ -1,0 +1,9 @@
+README for Modules versions
+---------------------------
+
+ This file lists third party modules built with nginx in Debian, homepage and
+ version.
+
+ naxsi
+  Homepage: http://code.google.com/p/naxsi/
+  Version: 0.44-r280
